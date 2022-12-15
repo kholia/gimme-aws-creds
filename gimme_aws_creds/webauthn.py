@@ -43,7 +43,7 @@ class UI(UserInteraction):
 
     def prompt_up(self) -> None:
         if not self._has_prompted:
-            self.ui.info('\nTouch your {} now...\n'.format(self._prompt_text))
+            self.ui.info('\nATTENTION: Touch your *** {} *** now...\n'.format(self._prompt_text))
             self._has_prompted = True
 
     def request_pin(
