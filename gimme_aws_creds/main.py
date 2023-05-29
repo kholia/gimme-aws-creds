@@ -534,6 +534,8 @@ class GimmeAWSCreds(object):
             }
         )
 
+        return 'classic'
+
         response_data = response.json()
 
         if response.status_code == 200:

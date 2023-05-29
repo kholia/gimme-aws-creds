@@ -15,6 +15,17 @@ from __future__ import print_function, absolute_import, unicode_literals
 from getpass import getpass
 from threading import Event, Thread
 
+import keyring
+from keyring.backends import OS_X
+import platform
+system = platform.system()
+if  system == 'Darwin':
+    keyring.set_keyring(OS_X.Keyring())
+elif system == 'Windows':
+    keyring.set_keyring(Windows.WinVaultKeyring())
+else:
+    pass # rely on autodiscovery for other platforms
+
 from ctap_keyring_device.ctap_keyring_device import CtapKeyringDevice
 from ctap_keyring_device.ctap_strucs import CtapOptions
 from fido2 import cose
