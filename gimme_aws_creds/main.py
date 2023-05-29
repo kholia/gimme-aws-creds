@@ -536,6 +536,8 @@ class GimmeAWSCreds(object):
 
         response_data = response.json()
 
+        return 'classic'
+
         if response.status_code == 200:
             if response_data['pipeline'] == 'v1':
                 ret = 'classic'
